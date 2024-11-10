@@ -14,7 +14,7 @@ public class Main {
         StringGeneration stringGeneratorTwo = new FakePassword();
         String resultOfFake = stringGeneratorTwo.generateString(lengthOfPassword);
         System.out.println(resultOfFake);
-
+        System.out.println();
         System.out.println(resultOfPassword);
 
     }
