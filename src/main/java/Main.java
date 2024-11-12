@@ -9,13 +9,22 @@ public class Main {
         System.out.println("Введите желаемую длину пароля");
         Scanner scanner = new Scanner(System.in);
         int lengthOfPassword = scanner.nextInt();
+
         StringGeneration stringGenerator = new StringGeneratorImpl();
+        PasswordHistory passwordHistory = new PasswordHistory();
         String resultOfPassword = stringGenerator.generateString(lengthOfPassword);
+        System.out.println(resultOfPassword);
+        passwordHistory.addPassword(resultOfPassword);
+
         StringGeneration stringGeneratorTwo = new FakePassword();
         String resultOfFake = stringGeneratorTwo.generateString(lengthOfPassword);
         System.out.println(resultOfFake);
-        System.out.println();
-        System.out.println(resultOfPassword);
+        passwordHistory.addPassword(resultOfFake);
+
+        passwordHistory.printHistory();
+
+
+
 
     }
 }
